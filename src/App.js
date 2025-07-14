@@ -2,7 +2,7 @@ import React from 'react';
 function App() {
   const divStyle = {
     color:'red',
-    backgroundcolor:'powderblue',
+    backgroundColor:'powderblue',
     fontSize:'larger',
     padding:'3px'
   }

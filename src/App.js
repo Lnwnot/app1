@@ -1,12 +1,15 @@
-import React from 'react';
-import './style.css'
-function App() {
-  return  (
+import React from 'react'
+import {Header,Content,Footer} from './func-components'
+import Calendar from './class-components'
+
+function App(){
+  return(
     <>
-      <h2>DeveloperThai.com</h2>
-      <div className='title'>React & React Native</div>
+      <Header/>
+      <p><center><Calendar/></center></p>
+      <Content/>
+      <Footer/>
     </>
   )
 }
-
 export default App;

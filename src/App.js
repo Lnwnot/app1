@@ -1,7 +1,13 @@
-import React from 'react'
-import {EventData2} from './event-data'
-
-function App(){
-  return <EventData2/>
+import React from "react";
+import { userContext } from "./context";
+import Header2 from "./context-header2"
+import Context2 from "./context-content2";
+export default function App(){
+  let [user,setUser] = React.useState()
+  return(
+    <userContext.Provider value={[user,setUser]}>
+      <Header2/>
+      <Context2/>
+    </userContext.Provider>
+  )
 }
-export default App;

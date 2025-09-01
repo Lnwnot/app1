@@ -41,6 +41,7 @@ const Quiz = ()=>{
                 <button onClick={()=>setSelectChoice("C")}>{QuestionData[current].C}</button>
                 <button onClick={()=>setSelectChoice("D")}>{QuestionData[current].D}</button>
             </div>
+            <p>{`${current+1} / ${QuestionData.length}`}</p>
         </div>
     )
 }

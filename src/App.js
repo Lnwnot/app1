@@ -1,13 +1,24 @@
-import React from "react";
-import { userContext } from "./context";
-import Header2 from "./context-header2"
-import Context2 from "./context-content2";
-export default function App(){
-  let [user,setUser] = React.useState()
+import { createContext,useState } from "react";
+import Menu from "./component/Menu"
+import Quiz from "./component/Quiz"
+import Score from "./component/Score"
+
+import './App.css'
+
+export const DataContext = createContext()
+
+function App(){
+  const [appState,setAppState] = useState("menu")
   return(
-    <userContext.Provider value={[user,setUser]}>
-      <Header2/>
-      <Context2/>
-    </userContext.Provider>
-  )
+    <DataContext.Provider value={{appState,setAppState}}>
+    <div className="App">
+      <h1>Web Development Quiz</h1>
+      {appState === "menu" && <Menu/> }{}
+      {appState === "quiz" && <Quiz/> }{}
+      {appState === "score" && <Score/> }{}
+    </div>
+    </DataContext.Provider>
+  );
 }
+
+export default App;

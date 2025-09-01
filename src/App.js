@@ -11,7 +11,7 @@ function App(){
   const [appState,setAppState] = useState("menu")
   const [score,setScore] = useState(0)
   return(
-    <DataContext.Provider value={{appState,setAppState,setScore}}>
+    <DataContext.Provider value={{appState,setAppState,setScore,score}}>
     <div className="App">
       <h1>Web Development Quiz</h1>
       {appState === "menu" && <Menu/> }{}

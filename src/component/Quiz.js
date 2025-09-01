@@ -4,9 +4,9 @@ import { DataContext } from "../App";
 
 const Quiz = ()=>{
     //console.log(QuestionData);
-    const [current,setCurrent] = useState(0)
-    const [selectChoice,setSelectChoice] = useState("")
-    const {score,setScore} = useContext(DataContext)
+    const [current, setCurrent] = useState(0)
+    const [selectChoice, setSelectChoice] = useState("")
+    const {score,setScore,setAppState} = useContext(DataContext)
 
     useEffect(()=>{
         checkAnswer()
@@ -25,7 +25,11 @@ const Quiz = ()=>{
     
     const nextQuestion=()=>{
         setSelectChoice("")
-        setCurrent(current+1)
+        if(current===QuestionData.length-1){
+            setAppState("score")
+        }else{
+            setCurrent(current+1)
+        }
     }
 
     return(
